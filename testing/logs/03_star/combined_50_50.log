@@ -1,0 +1,12 @@
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+	/opt/conda/bin/STAR-avx2 --runMode alignReads --twopassMode Basic --runThreadN 8 --limitSjdbInsertNsj 3000000 --runRNGseed 0 --quantMode TranscriptomeSAM GeneCounts --genomeLoad NoSharedMemory --readFilesCommand zcat --sjdbOverhang 100 --sjdbGTFtagExonParentTranscript transcript_id --outFilterType BySJout --outFilterMultimapScoreRange 1 --outFilterMultimapNmax 10 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.3 --outFilterMismatchNoverReadLmax 1.0 --outFilterScoreMin 0 --outFilterScoreMinOverLread 0.66 --outFilterMatchNmin 0 --outFilterMatchNminOverLread 0.66 --outFilterIntronMotifs None --outFilterIntronStrands RemoveInconsistentStrands --outSAMattrRGline ID:graft,ID:both --outSAMtype BAM SortedByCoordinate --outSJfilterReads All --outSJfilterOverhangMin 30 12 12 12 --outSJfilterCountUniqueMin 3 1 1 1 --outSJfilterCountTotalMin 5 1 1 1 --outSJfilterDistToOtherSJmin 10 0 5 10 --outSJfilterIntronMaxVsReadN 50000 100000 200000 --alignIntronMin 21 --alignIntronMax 0 --alignSJoverhangMin 5 --readFilesIn /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_1.fq.gz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_2.fq.gz --genomeDir /data3/kchow/indices/STAR_index/ --outFileNamePrefix /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.
+	STAR version: 2.7.10b   compiled: 2023-05-25T06:56:23+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
+Nov 15 17:31:16 ..... started STAR run
+Nov 15 17:31:16 ..... loading genome
+Nov 15 17:33:32 ..... started 1st pass mapping
+Nov 15 17:38:57 ..... finished 1st pass mapping
+Nov 15 17:38:58 ..... inserting junctions into the genome indices
+Nov 15 17:40:34 ..... started mapping
+Nov 15 17:46:07 ..... finished mapping
+Nov 15 17:46:08 ..... started sorting BAM
+Nov 15 17:47:56 ..... finished successfully

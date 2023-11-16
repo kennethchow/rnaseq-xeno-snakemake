@@ -1,0 +1,140 @@
+### RNA-SEQ PREPROCESSING CONFIGURATION ###
+
+# 2 run modes are available for different input data, 'rnaseq' or 'xenograft'
+mode: 'xenograft' # rnaseq or xenograft
+
+# Samples file name
+samples: 'samples'
+# Data directory containing raw fasta files
+data_dir: '/data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata'
+# Result directory for outputs of pipeline
+result_dir: '/data3/kchow/xenograft/simulated_human_mouse/testing_5050/results'
+
+# Index and reference directories
+star_index_dir: '/data3/kchow/indices/STAR_index/'
+rsem_reference: '/data3/kchow/indices/rsem_ref/RSEM_hg38'
+xeng_ref: '/data3/kchow/indices/xengsort_ref'
+xeng_cdna_human: '/data3/kchow/indices/xengsort_ref/Homo_sapiens.GRCh38.cdna.all.fa.gz'
+xeng_cdna_mouse: '/data3/kchow/indices/xengsort_ref/Mus_musculus.GRCm38.cdna.all.fa.gz'
+
+# n_cpus for each process
+threads:
+    fastqc_raw: 8
+    fastqc_trimmed: 8
+    trim_galore: 8
+    classify_sample: 16
+    build_index: 16
+    star_2_pass: 8
+    rsem_calculate_expression: 8
+    multiqc: 4
+
+# Memory allocation for STAR
+mem_mb:
+    star: 58000
+
+# Trim galore params
+trim_galore:
+    extra: ''
+    quality: 20
+    phred33: True
+    phred64: False
+    fastqc: False
+    fastqc_args: False
+    adapter: False
+    adapter2: False
+    illumina: False
+    nextera: False
+    small_rna: False
+    max_length: False
+    stringency: 3
+    e: 0.1
+    length: 40
+    max_n: False
+    trim_n: False
+    no_report_file: False
+    suppress_warn: False
+    clip_R1: False
+    clip_R2: False
+    three_prime_clip_R1: False
+    three_prime_clip_R2: False
+    nextseq: False
+    basename: False
+    rrbs: False
+    non_directional: False
+    keep: False
+    trim1: False
+    retain_unpaired: False
+    length_1: False
+    length_2: False
+
+# Xengsort params
+xengsort:
+    k: 25
+    cl_chunksize: 16.0
+    cl_prefetch: 1
+    cl_debug: '-DD'
+    id_size: 4496607845
+    id_fill: 0.88
+    id_subtables: 9
+    id_weakthreads: 11
+    id_bucketsize: 4 
+    id_hashfuncs: ""
+    id_debug: '-DD'
+
+# STAR params
+star_2_pass:
+    extra: '--limitSjdbInsertNsj 3000000'
+    runRNGseed: 0
+    quantMode: 'TranscriptomeSAM GeneCounts'
+    genomeLoad: 'NoSharedMemory'
+    readFilesCommand: 'zcat'
+    sjdbFileChrStartEnd: ''
+    sjdbGTFfile: ''
+    sjdbGTFchrPrefix: ''
+    sjdbOverhang: 100
+    sjdbGTFtagExonParentTranscript: 'transcript_id'
+    outFilterType: 'BySJout'
+    outFilterMultimapScoreRange: 1
+    outFilterMultimapNmax: 10
+    outFilterMismatchNmax: 10
+    outFilterMismatchNoverLmax: 0.3
+    outFilterMismatchNoverReadLmax: 1.0
+    outFilterScoreMin: 0
+    outFilterScoreMinOverLread: 0.66
+    outFilterMatchNmin: 0
+    outFilterMatchNminOverLread: 0.66
+    outFilterIntronMotifs: 'None'
+    outFilterIntronStrands: 'RemoveInconsistentStrands'
+    outSAMattrRGline: 'ID:graft,ID:both'
+    outSAMtype: 'BAM SortedByCoordinate'
+    outSJfilterReads: 'All'
+    outSJfilterOverhangMin: '30 12 12 12'
+    outSJfilterCountUniqueMin: '3 1 1 1'
+    outSJfilterCountTotalMin: '5 1 1 1'
+    outSJfilterDistToOtherSJmin: '10 0 5 10'
+    outSJfilterIntronMaxVsReadN: '50000 100000 200000'
+    alignIntronMin: 21
+    alignIntronMax: 0
+    alignSJoverhangMin: 5
+
+# RSEM params
+rsem_calculate_expression:
+    extra:
+    paired-end: True
+    alignments: True
+    no-bam-output: True
+    seed: 42
+    strandedness: 'none'
+    no-qualities: False
+    bowtie2: False
+    star: False
+    append-names: False
+    single-cell-prior: False
+    calc-pme: False
+    calc-ci: False
+    quiet: False
+    sort-bam-by-read-name: False
+    sampling-for-bam: False
+    output-genome-bam: False
+    sort-bam-by-coordinate: False
+    sort-bam-memory-per-thread:

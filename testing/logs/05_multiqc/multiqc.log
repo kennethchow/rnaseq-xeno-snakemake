@@ -1,0 +1,10 @@
+
+  /// MultiQC 🔍 | v1.16
+
+|           multiqc | Search path : /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 56/56  
+|          cutadapt | Found 1 reports
+|            fastqc | Found 2 reports
+|           multiqc | Report      : results/05_multiqc/multiqc_report.html
+|           multiqc | Data        : results/05_multiqc/multiqc_report_data
+|           multiqc | MultiQC complete

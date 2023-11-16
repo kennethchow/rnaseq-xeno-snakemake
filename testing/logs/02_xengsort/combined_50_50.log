@@ -1,0 +1,52 @@
+
+# Xengsort classify [2023-11-15 17:04:18]
+
+- (c) 2019-2023 by Sven Rahmann, Jens Zentgraf, Algorithmic Bioinformatics, Saarland University
+- Licensed under the MIT License
+
+## Loading hash table [2023-11-15 17:04:18]
+- hash files '/data3/kchow/indices/xengsort_ref/xengsort-k25.info', '/data3/kchow/indices/xengsort_ref/xengsort-k25.hash'...
+- Importing value set ('xenograft', '3').
+- Hash functions: linear1006721:linear1006721:linear62591:linear42953
+- Building hash table of type 's3c_fbcbvb'...
+- allocated uint64 hash table of shape (1996008520,).
+- fingerprintbits: 19.997313194449312 -> 20; loss=0.1 MB
+- nbuckets=67233969, slots=268935876, n=5109781644 per subtable
+- bits per slot: 25; per bucket: 100 -> 100
+- subtable bits: 6723397120;  (801.5 MiB, 0.783 GiB) x 19 subtables
+- table bits: 127744545280;  MB: 15228.3;  GB: 14.871
+- shortcutbits: 0
+- final hash functions: ('linear1006721', 'linear1006721', 'linear62591', 'linear42953')
+- Checksum 9646981914897435829 successfully verified. Nice.
+- Time to load: 67.4 sec
+- Begin classification [2023-11-15 17:05:25]
+- mask: k=25, w=25, tuple=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+- Using count based classification mode
+- Processing contiguous 25-mers.
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-host.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-host.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-host.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-host.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-ambiguous.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-ambiguous.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-ambiguous.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-ambiguous.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-neither.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-neither.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-neither.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-neither.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-unclassified.1.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-unclassified.1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-unclassified.2.fq.gz of type fastq using 'pigz /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-unclassified.2.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz of type fastq using 'pigz -cd /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz'
+- creating Popen command for /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz of type fastq using 'pigz -cd /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz'
+
+## Classification Statistics
+
+```
+prefix	host	graft	ambiguous	both	neither
+/data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25	15864587	19046757	120910	267312	57970312
+```
+
+## Running time statistics
+
+- Running time: 1608.5 sec
+- Running time: 26.81 min
+- Done. [2023-11-15 17:31:06]

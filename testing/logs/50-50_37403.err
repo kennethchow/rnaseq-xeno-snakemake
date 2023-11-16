@@ -1,0 +1,173 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+classify_sample                  1
+concat_filtered                  1
+fastqc_raw                       1
+fastqc_trimmed                   1
+multiqc                          1
+rsem_calculate_expression        1
+star_2_pass                      1
+trim_galore                      1
+total                            9
+
+Select jobs to execute...
+
+[Wed Nov 15 16:30:32 2023]
+rule trim_galore:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz
+    log: logs/01_trim_galore/combined_50_50.log
+    jobid: 3
+    benchmark: benchmarks/01_trim_galore/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz
+    wildcards: sample=combined_50_50
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Nov 15 16:30:32 2023]
+rule fastqc_raw:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.zip
+    log: logs/00_fastqc/combined_50_50.log
+    jobid: 1
+    benchmark: benchmarks/00_fastqc/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html
+    wildcards: sample=combined_50_50
+    threads: 8
+    resources: tmpdir=/tmp
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 16:45:46 2023]
+Finished job 1.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Wed Nov 15 16:45:46 2023]
+rule multiqc:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/05_multiqc/multiqc_report.html
+    log: logs/05_multiqc/multiqc.log
+    jobid: 9
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/05_multiqc/multiqc_report.html; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html
+    threads: 4
+    resources: tmpdir=/tmp
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 16:45:50 2023]
+Finished job 9.
+2 of 9 steps (22%) done
+[Wed Nov 15 17:04:16 2023]
+Finished job 3.
+3 of 9 steps (33%) done
+Select jobs to execute...
+
+[Wed Nov 15 17:04:16 2023]
+rule classify_sample:
+    input: /data3/kchow/indices/xengsort_ref/xengsort-k25.info, /data3/kchow/indices/xengsort_ref/xengsort-k25.hash, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz
+    log: logs/02_xengsort/combined_50_50.log
+    jobid: 4
+    benchmark: benchmarks/02_xengsort/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz
+    wildcards: sample=combined_50_50
+    threads: 16
+    resources: tmpdir=/tmp
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 17:31:07 2023]
+Finished job 4.
+4 of 9 steps (44%) done
+Select jobs to execute...
+
+[Wed Nov 15 17:31:07 2023]
+rule fastqc_trimmed:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_val_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_val_1_fastqc.zip
+    log: logs/00_fastqc/combined_50_50.log
+    jobid: 2
+    benchmark: benchmarks/00_fastqc/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_val_1_fastqc.html; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz
+    wildcards: sample=combined_50_50
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Nov 15 17:31:07 2023]
+rule concat_filtered:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_2.fq.gz
+    log: logs/03_star/combined_50_50_concat.log
+    jobid: 7
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_1.fq.gz; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.2.fq.gz
+    wildcards: sample=combined_50_50
+    resources: tmpdir=/tmp
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 17:31:16 2023]
+Finished job 7.
+5 of 9 steps (56%) done
+Select jobs to execute...
+
+[Wed Nov 15 17:31:16 2023]
+rule star_2_pass:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_2.fq.gz
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.sortedByCoord.out.bam, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.toTranscriptome.out.bam
+    log: logs/03_star/combined_50_50.log
+    jobid: 6
+    benchmark: benchmarks/03_star/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.sortedByCoord.out.bam, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.toTranscriptome.out.bam; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_2.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50_cat_1.fq.gz
+    wildcards: sample=combined_50_50
+    threads: 8
+    resources: tmpdir=/tmp, mem_mb=58000, mem_mib=55314
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 17:45:40 2023]
+Finished job 2.
+6 of 9 steps (67%) done
+Removing temporary output /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2_val_2.fq.gz.
+Removing temporary output /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1_val_1.fq.gz.
+[Wed Nov 15 17:47:58 2023]
+Finished job 6.
+7 of 9 steps (78%) done
+Select jobs to execute...
+
+[Wed Nov 15 17:47:58 2023]
+rule rsem_calculate_expression:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.toTranscriptome.out.bam
+    output: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/04_rsem/combined_50_50/combined_50_50.genes.results, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/04_rsem/combined_50_50/combined_50_50.isoforms.results
+    log: logs/04_rsem_calculate_expression/combined_50_50.log
+    jobid: 8
+    benchmark: benchmarks/04_rsem_calculate_expression/combined_50_50.benchmark
+    reason: Missing output files: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/04_rsem/combined_50_50/combined_50_50.genes.results; Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.toTranscriptome.out.bam
+    wildcards: sample=combined_50_50
+    threads: 8
+    resources: tmpdir=/tmp
+
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[Wed Nov 15 17:51:06 2023]
+Finished job 8.
+8 of 9 steps (89%) done
+Select jobs to execute...
+
+[Wed Nov 15 17:51:06 2023]
+localrule all:
+    input: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_val_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.sortedByCoord.out.bam, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/04_rsem/combined_50_50/combined_50_50.genes.results, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/05_multiqc/multiqc_report.html
+    jobid: 0
+    reason: Input files updated by another job: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-graft.1.fq.gz, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/00_fastqc/combined_50_50/combined_50_50_1_val_1_fastqc.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/05_multiqc/multiqc_report.html, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/03_star/combined_50_50/combined_50_50.Aligned.sortedByCoord.out.bam, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/04_rsem/combined_50_50/combined_50_50.genes.results, /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/02_xengsort/combined_50_50/combined_50_50-k25-both.1.fq.gz
+    resources: tmpdir=/tmp
+
+[Wed Nov 15 17:51:06 2023]
+Finished job 0.
+9 of 9 steps (100%) done
+Complete log: .snakemake/log/2023-11-15T163031.701275.snakemake.log

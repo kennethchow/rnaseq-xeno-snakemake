@@ -1,0 +1,485 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_SG:en",
+	LC_ALL = "en_US.UTF-8",
+	LC_TERMINAL = "iTerm2",
+	LANG = "en_SG.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.4
+Could not detect version of Python used by Cutadapt from the first line of Cutadapt (but found this: >>>#!/bin/sh<<<)
+Letting the (modified) Cutadapt deal with the Python version instead
+pigz 2.6
+Parallel gzip (pigz) detected. Proceeding with multicore (de)compression using 8 cores
+
+igzip command line interface 2.30.0
+igzip detected. Using igzip for decompressing
+
+Output will be written into the directory: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Nextera	19	CTGTCTCTTATA	1000000	0.00
+smallRNA	6	TGGAATTCTCGG	1000000	0.00
+Illumina	0	AGATCGGAAGAGC	1000000	0.00
+Using Nextera adapter for trimming (count: 19). Second best hit was smallRNA (count: 6)
+
+Writing report to '/data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_1.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.10
+Cutadapt version: 4.4
+Python version: could not detect
+Number of cores used for trimming: 8
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 40 bp
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.4). Setting -j 8
+Writing final adapter and quality trimmed output to combined_50_50_1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz <<< 
+10000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+This is cutadapt 4.4 with Python 3.10.0
+Command line parameters: -j 8 -e 0.1 -q 20 -O 3 -a CTGTCTCTTATA /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz
+Processing single-end reads on 8 cores ...
+Finished in 607.699 s (6.509 µs/read; 9.22 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              93,361,723
+Reads with adapters:                 2,792,166 (3.0%)
+Reads written (passing filters):    93,361,723 (100.0%)
+
+Total basepairs processed: 14,004,258,450 bp
+Quality-trimmed:               5,762,415 bp (0.0%)
+Total written (filtered):  13,976,527,700 bp (99.8%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 2792166 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 21.1%
+  C: 26.0%
+  G: 20.7%
+  T: 32.2%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	1903153	1458776.9	0	1903153
+4	516650	364694.2	0	516650
+5	114760	91173.6	0	114760
+6	52231	22793.4	0	52231
+7	19155	5698.3	0	19155
+8	8299	1424.6	0	8299
+9	7497	356.1	0	1634 5863
+10	7544	89.0	1	229 7315
+11	3511	22.3	1	77 3434
+12	1285	5.6	1	7 1278
+13	1123	5.6	1	14 1109
+14	1114	5.6	1	9 1105
+15	1113	5.6	1	7 1106
+16	1102	5.6	1	9 1093
+17	1178	5.6	1	13 1165
+18	1148	5.6	1	13 1135
+19	1162	5.6	1	22 1140
+20	1142	5.6	1	11 1131
+21	1201	5.6	1	12 1189
+22	1087	5.6	1	15 1072
+23	1171	5.6	1	13 1158
+24	1169	5.6	1	13 1156
+25	1143	5.6	1	18 1125
+26	1095	5.6	1	12 1083
+27	1104	5.6	1	15 1089
+28	1167	5.6	1	11 1156
+29	1168	5.6	1	13 1155
+30	1122	5.6	1	10 1112
+31	1117	5.6	1	8 1109
+32	1182	5.6	1	21 1161
+33	1111	5.6	1	9 1102
+34	1141	5.6	1	7 1134
+35	1130	5.6	1	13 1117
+36	1128	5.6	1	11 1117
+37	1186	5.6	1	16 1170
+38	1171	5.6	1	13 1158
+39	1070	5.6	1	10 1060
+40	1148	5.6	1	15 1133
+41	1142	5.6	1	18 1124
+42	1101	5.6	1	8 1093
+43	1194	5.6	1	10 1184
+44	1096	5.6	1	9 1087
+45	1127	5.6	1	14 1113
+46	1146	5.6	1	15 1131
+47	1188	5.6	1	12 1176
+48	1169	5.6	1	12 1157
+49	1143	5.6	1	15 1128
+50	1131	5.6	1	6 1125
+51	1100	5.6	1	14 1086
+52	1187	5.6	1	16 1171
+53	1168	5.6	1	11 1157
+54	1165	5.6	1	7 1158
+55	1122	5.6	1	9 1113
+56	1130	5.6	1	10 1120
+57	1141	5.6	1	11 1130
+58	1126	5.6	1	5 1121
+59	1071	5.6	1	9 1062
+60	1193	5.6	1	12 1181
+61	1132	5.6	1	12 1120
+62	1152	5.6	1	13 1139
+63	1176	5.6	1	15 1161
+64	1160	5.6	1	10 1150
+65	1141	5.6	1	9 1132
+66	1092	5.6	1	7 1085
+67	1086	5.6	1	12 1074
+68	1176	5.6	1	11 1165
+69	1089	5.6	1	14 1075
+70	1178	5.6	1	13 1165
+71	1192	5.6	1	15 1177
+72	1186	5.6	1	18 1168
+73	1121	5.6	1	10 1111
+74	1162	5.6	1	15 1147
+75	1184	5.6	1	14 1170
+76	1113	5.6	1	13 1100
+77	1129	5.6	1	12 1117
+78	1181	5.6	1	9 1172
+79	1180	5.6	1	15 1165
+80	1231	5.6	1	21 1210
+81	1198	5.6	1	15 1183
+82	1099	5.6	1	9 1090
+83	1107	5.6	1	15 1092
+84	1170	5.6	1	10 1160
+85	1158	5.6	1	11 1147
+86	1159	5.6	1	14 1145
+87	1119	5.6	1	10 1109
+88	1101	5.6	1	10 1091
+89	1177	5.6	1	10 1167
+90	1145	5.6	1	13 1132
+91	1146	5.6	1	6 1140
+92	1143	5.6	1	13 1130
+93	1147	5.6	1	10 1137
+94	1205	5.6	1	18 1187
+95	1150	5.6	1	14 1136
+96	1107	5.6	1	10 1097
+97	1162	5.6	1	6 1156
+98	1124	5.6	1	8 1116
+99	1132	5.6	1	8 1124
+100	1163	5.6	1	9 1154
+101	1200	5.6	1	16 1184
+102	1081	5.6	1	10 1071
+103	1115	5.6	1	11 1104
+104	1179	5.6	1	4 1175
+105	1133	5.6	1	11 1122
+106	1123	5.6	1	15 1108
+107	1099	5.6	1	10 1089
+108	1175	5.6	1	12 1163
+109	1168	5.6	1	12 1156
+110	1098	5.6	1	19 1079
+111	1092	5.6	1	16 1076
+112	1133	5.6	1	10 1123
+113	1137	5.6	1	11 1126
+114	1141	5.6	1	7 1134
+115	1147	5.6	1	10 1137
+116	1123	5.6	1	7 1116
+117	1147	5.6	1	12 1135
+118	1118	5.6	1	10 1108
+119	1174	5.6	1	15 1159
+120	1106	5.6	1	13 1093
+121	1135	5.6	1	11 1124
+122	1097	5.6	1	9 1088
+123	1110	5.6	1	13 1097
+124	1144	5.6	1	10 1134
+125	1168	5.6	1	10 1158
+126	1118	5.6	1	17 1101
+127	1188	5.6	1	16 1172
+128	1168	5.6	1	15 1153
+129	1166	5.6	1	7 1159
+130	1151	5.6	1	8 1143
+131	1163	5.6	1	16 1147
+132	1201	5.6	1	15 1186
+133	1167	5.6	1	8 1159
+134	1184	5.6	1	16 1168
+135	1151	5.6	1	7 1144
+136	1084	5.6	1	9 1075
+137	1120	5.6	1	12 1108
+138	1210	5.6	1	20 1190
+139	1181	5.6	1	11 1170
+140	1151	5.6	1	9 1142
+141	1201	5.6	1	11 1190
+142	1155	5.6	1	12 1143
+143	1220	5.6	1	11 1209
+144	1217	5.6	1	13 1204
+145	1209	5.6	1	17 1192
+146	1157	5.6	1	17 1140
+147	1182	5.6	1	14 1168
+148	1120	5.6	1	12 1108
+149	1043	5.6	1	10 1033
+150	1125	5.6	1	9 1116
+
+RUN STATISTICS FOR INPUT FILE: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_1.fq.gz
+=============================================
+93361723 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '/data3/kchow/xenograft/simulated_human_mouse/testing_5050/results/01_trim_galore/combined_50_50/combined_50_50_2.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.10
+Cutadapt version: 4.4
+Python version: could not detect
+Number of cores used for trimming: 8
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 40 bp
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.4). Setting -j -j 8
+Writing final adapter and quality trimmed output to combined_50_50_2_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz <<< 
+10000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+This is cutadapt 4.4 with Python 3.10.0
+Command line parameters: -j 8 -e 0.1 -q 20 -O 3 -a CTGTCTCTTATA /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz
+Processing single-end reads on 8 cores ...
+Finished in 647.670 s (6.937 µs/read; 8.65 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              93,361,723
+Reads with adapters:                 2,773,994 (3.0%)
+Reads written (passing filters):    93,361,723 (100.0%)
+
+Total basepairs processed: 14,004,258,450 bp
+Quality-trimmed:              19,668,717 bp (0.1%)
+Total written (filtered):  13,962,778,053 bp (99.7%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 2773994 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 21.2%
+  C: 25.9%
+  G: 20.8%
+  T: 32.0%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	1892467	1458776.9	0	1892467
+4	512937	364694.2	0	512937
+5	113961	91173.6	0	113961
+6	51537	22793.4	0	51537
+7	18458	5698.3	0	18458
+8	8080	1424.6	0	8080
+9	7323	356.1	0	1595 5728
+10	7336	89.0	1	245 7091
+11	3444	22.3	1	69 3375
+12	1350	5.6	1	19 1331
+13	1161	5.6	1	7 1154
+14	1119	5.6	1	14 1105
+15	1192	5.6	1	12 1180
+16	1173	5.6	1	10 1163
+17	1089	5.6	1	14 1075
+18	1167	5.6	1	12 1155
+19	1004	5.6	1	13 991
+20	1126	5.6	1	10 1116
+21	1145	5.6	1	18 1127
+22	1174	5.6	1	18 1156
+23	1089	5.6	1	5 1084
+24	1116	5.6	1	10 1106
+25	1136	5.6	1	11 1125
+26	1100	5.6	1	8 1092
+27	1120	5.6	1	8 1112
+28	1120	5.6	1	10 1110
+29	1135	5.6	1	13 1122
+30	1136	5.6	1	14 1122
+31	1109	5.6	1	9 1100
+32	1066	5.6	1	6 1060
+33	1173	5.6	1	12 1161
+34	1102	5.6	1	12 1090
+35	1145	5.6	1	11 1134
+36	1132	5.6	1	19 1113
+37	1129	5.6	1	4 1125
+38	1083	5.6	1	12 1071
+39	1137	5.6	1	10 1127
+40	1133	5.6	1	10 1123
+41	1107	5.6	1	9 1098
+42	1160	5.6	1	13 1147
+43	1131	5.6	1	11 1120
+44	1176	5.6	1	11 1165
+45	1083	5.6	1	11 1072
+46	1112	5.6	1	13 1099
+47	1173	5.6	1	14 1159
+48	1101	5.6	1	13 1088
+49	1166	5.6	1	17 1149
+50	1194	5.6	1	12 1182
+51	1139	5.6	1	14 1125
+52	1135	5.6	1	6 1129
+53	1136	5.6	1	9 1127
+54	1119	5.6	1	7 1112
+55	1170	5.6	1	14 1156
+56	1112	5.6	1	10 1102
+57	1114	5.6	1	6 1108
+58	1135	5.6	1	15 1120
+59	1125	5.6	1	10 1115
+60	1134	5.6	1	10 1124
+61	1219	5.6	1	15 1204
+62	1133	5.6	1	11 1122
+63	1136	5.6	1	10 1126
+64	1180	5.6	1	6 1174
+65	1126	5.6	1	15 1111
+66	1120	5.6	1	16 1104
+67	1215	5.6	1	12 1203
+68	1083	5.6	1	9 1074
+69	1152	5.6	1	11 1141
+70	1207	5.6	1	14 1193
+71	1156	5.6	1	9 1147
+72	1164	5.6	1	11 1153
+73	1118	5.6	1	14 1104
+74	1088	5.6	1	11 1077
+75	1154	5.6	1	9 1145
+76	1155	5.6	1	16 1139
+77	1208	5.6	1	17 1191
+78	1162	5.6	1	11 1151
+79	1156	5.6	1	12 1144
+80	1191	5.6	1	14 1177
+81	1147	5.6	1	10 1137
+82	1158	5.6	1	18 1140
+83	1136	5.6	1	23 1113
+84	1138	5.6	1	12 1126
+85	1172	5.6	1	10 1162
+86	1154	5.6	1	8 1146
+87	1114	5.6	1	10 1104
+88	1154	5.6	1	11 1143
+89	1086	5.6	1	12 1074
+90	1123	5.6	1	11 1112
+91	1121	5.6	1	8 1113
+92	1161	5.6	1	12 1149
+93	1131	5.6	1	13 1118
+94	1115	5.6	1	12 1103
+95	1199	5.6	1	14 1185
+96	1122	5.6	1	14 1108
+97	1171	5.6	1	10 1161
+98	1070	5.6	1	11 1059
+99	1158	5.6	1	17 1141
+100	1098	5.6	1	14 1084
+101	1167	5.6	1	11 1156
+102	1206	5.6	1	5 1201
+103	1162	5.6	1	7 1155
+104	1142	5.6	1	16 1126
+105	1164	5.6	1	11 1153
+106	1152	5.6	1	14 1138
+107	1089	5.6	1	5 1084
+108	1179	5.6	1	9 1170
+109	1089	5.6	1	16 1073
+110	1134	5.6	1	8 1126
+111	1178	5.6	1	14 1164
+112	1130	5.6	1	15 1115
+113	1189	5.6	1	12 1177
+114	1138	5.6	1	10 1128
+115	1172	5.6	1	11 1161
+116	1123	5.6	1	8 1115
+117	1165	5.6	1	8 1157
+118	1144	5.6	1	10 1134
+119	1121	5.6	1	6 1115
+120	1160	5.6	1	15 1145
+121	1126	5.6	1	6 1120
+122	1068	5.6	1	9 1059
+123	1083	5.6	1	12 1071
+124	1160	5.6	1	12 1148
+125	1151	5.6	1	13 1138
+126	1123	5.6	1	10 1113
+127	1140	5.6	1	6 1134
+128	1147	5.6	1	14 1133
+129	1191	5.6	1	10 1181
+130	1131	5.6	1	11 1120
+131	1153	5.6	1	13 1140
+132	1181	5.6	1	11 1170
+133	1209	5.6	1	12 1197
+134	1104	5.6	1	12 1092
+135	1165	5.6	1	14 1151
+136	1148	5.6	1	14 1134
+137	1127	5.6	1	11 1116
+138	1152	5.6	1	13 1139
+139	1137	5.6	1	10 1127
+140	1113	5.6	1	13 1100
+141	1100	5.6	1	4 1096
+142	1135	5.6	1	10 1125
+143	1088	5.6	1	9 1079
+144	1179	5.6	1	13 1166
+145	1138	5.6	1	11 1127
+146	1143	5.6	1	16 1127
+147	1172	5.6	1	14 1158
+148	1137	5.6	1	23 1114
+149	1168	5.6	1	11 1157
+150	944	5.6	1	13 931
+
+RUN STATISTICS FOR INPUT FILE: /data3/kchow/xenograft/simulated_human_mouse/testing_5050/rawdata/combined_50_50_2.fq.gz
+=============================================
+93361723 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files combined_50_50_1_trimmed.fq.gz and combined_50_50_2_trimmed.fq.gz
+file_1: combined_50_50_1_trimmed.fq.gz, file_2: combined_50_50_2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: combined_50_50_1_trimmed.fq.gz and combined_50_50_2_trimmed.fq.gz <<<<<
+Writing validated paired-end Read 1 reads to combined_50_50_1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to combined_50_50_2_val_2.fq.gz
+
+Total number of sequences analysed: 93361723
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (40 bp): 91845 (0.10%)
+
+Deleting both intermediate output files combined_50_50_1_trimmed.fq.gz and combined_50_50_2_trimmed.fq.gz
+
+====================================================================================================
+
