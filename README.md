@@ -113,7 +113,7 @@ The retries flag is there to activate the oom handling feature in snakemake, if 
 <!-- BENCHMARKS -->
 ## Benchmarks
 
-The pipeline was tested on a simulated dataset containing an even 50 50 split of mouse and human DNA containing x reads. Total run time for the sample dataset was 1 hour and 21 minutes given 16 cores on a modern HPC workstation.
+The pipeline was tested on a simulated dataset containing an even 50 50 split of mouse and human DNA containing 93361723 reads. Total run time for the sample dataset was 1 hour and 21 minutes given 16 cores on a modern HPC workstation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
